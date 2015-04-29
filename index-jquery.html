@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>website</title>
+		<link rel="stylesheet" type="text/css" href="css/style2.css" />
+		<link href="css/superfish.css" rel="stylesheet" media="screen">
+		<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,200,600,600italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<script src="js/jquery.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script src="js/jquery.flexslider.js"></script>
+		<link rel="stylesheet" href="js/flexslider.css" type="text/css">
+		<link rel="stylesheet" href="css/screen.css" />
+		<script src="js/jquery.validate.js"></script>
+	
+		
+		<script type="text/javascript" charset="utf-8">
+		$(window).load(function() {
+			$(function(){
+      		$("ul.div-menu li").hover(function(){
+          	$(this).addClass("hover");
+          	$('ul:first',this).css('visibility', 'visible');
+      	}, function(){
+          $(this).removeClass("hover");
+          $('ul:first',this).css('visibility', 'hidden');
+       
+      	});
+       
+      //$("ul.top-menu li ul li:has(ul)").find("a:first").append(" &raquo; ");
+  });
+		$('.flexslider').flexslider();
+		});
+		</script>
+	</head>
+
+<body>
+
+	<div id="div-header-wrap">
+
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				$( ".quote-button" ).click(function() {
+				$('.div-featured-box').hide('slow');
+		}); //end click
+
+				//mail validation
+				$("#mail").keyup(function(){
+					var pattern = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+					var mail=$('#mail').val();
+					if (!pattern.test(mail)) {
+						$('#mail').css('background-color', 'red');
+					}
+					else{
+						$('#mail').css('background-color','green');
+					}
+				});
+				
+
+				//kalkulator
+				$("#izracun").click(function(){
+					var a=$("#cijena").val();
+					var b=$("#kolicina").val();
+					var c=a*b;
+					$("#rezultat").val(c);
+					$("#rezultat").css("background-color", "#FF0000");
+					$(".span-rez").html(c);
+					$(".p-rez").addClass("p-rez-active");
+					
+					//alert 3znamenke
+					var rez=toString(c);
+					var n=rez.length;
+					if (n>3) {
+						alert("rez veci od 3");
+					};
+					
+					
+				}); 
+					
+					
+
+				
+				//makni stil
+				$("#clear").click(function(){
+					$(".p-rez").removeClass("p-rez-active");
+				});
+				//hover slike
+				$(".img-hover").hover(function(){
+				var a=$(this).attr("src");
+				var b=$(this).attr("title");
+					$(this).attr("src", b);
+					$(this).attr("title", a);
+				
+				});
+					
+				
+
+		}); //end ready
+		
+		
+	</script>
+		
+	
+
+
+	</div>
+	
+
+	<div id="div-featured-content-wrap">
+		<div id="div-featured-content">
+			<div class="div-featured-box">
+				<img src="images/banner.jpg" alt="slika" width="230px" />
+				<h2>Maecenas lectus sapien</h2>
+				<hr>
+				<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</p>
+			</div>
+			<div class="div-featured-box">
+				<img src="images/banner.jpg" alt="slika" width="230px" />
+				<h2>Praesent scelerisque</h2>
+				<hr>
+				<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</p>
+			</div>
+			<div class="div-featured-box">
+				<img src="images/banner.jpg" alt="slika" width="230px" />
+				<h2>Fusce ultrices fringilla</h2>
+				<hr>
+				<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</p>
+			</div>
+			<div class="div-featured-box">
+				<img src="images/banner.jpg" alt="slika" width="230px" />
+				<h2>Etiam posuere augue</h2>
+				<hr>
+				<p>In posuere eleifend odio. Quisque semper augue mattis wisi. Pellentesque viverra vulputate enim. Aliquam erat volutpat.</p>	<!-- end div-featured-box-->
+			</div> 
+		</div>
+	</div>	
+
+	<div id="div-quote-wrap">	  
+		<div id="div-quote">
+			<h2>Maecenas vitae orci vitae tellus feugiat eleifend</h2>
+			<span>Quisque dictum integer nisl risus, sagittis convallis, rutrum id, congue, and nibh</span>
+			<p class="quote-button">etiam posuere</p>
+		</div>
+	</div>
+
+	
+
+
+</body>
+</html> 
